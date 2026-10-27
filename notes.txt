@@ -1,0 +1,18 @@
+
+Commands:
+
+virtual environment:
+    $   py -m venv .venv            # Create .venv folder in this directory
+    $   py -m venv <directory>      # Create in specific directory
+    $   .venv\scripts\activate      # Activate the venv for use
+    $   $Env:Path -split ';'        # Check working environment %PATH%
+    $   deactivate                  # Deactivate venv
+    $   rm -r venv                  # Delete venv
+
+python:
+    $   py -m pip list              # List all pip packages installed
+    $   py --version                # Show python version
+    $   pyside6-designer            # Open pyside6 designer window
+    $   auto-py-to-exe              # Start auto py to exe
+
+

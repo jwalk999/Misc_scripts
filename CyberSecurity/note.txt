@@ -1,0 +1,10 @@
+File integrity monitor:
+    Use hashlib to hash every file in a folder, save the hashes, then rerun later and flag anything added, deleted, or changed. This is a simplified version of how real tools like Tripwire detect tampering.
+
+
+Log file analyzer: 
+    Parse a sample Linux auth.log (plenty are available online) to count failed login attempts by IP address and flag likely brute-force attacks. You’ll get good practice with file handling, string parsing, and dictionaries.
+
+
+Password tool:
+    Build a generator that creates strong passwords, plus a checker that scores a password on length, character variety, and whether it appears in a common-passwords list.

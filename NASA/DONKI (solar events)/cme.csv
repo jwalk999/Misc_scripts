@@ -1,0 +1,6 @@
+Date/Time,Type,Speed (km/s),Half Angle,Latitude,Longitude,Note
+2026-10-17 02:45:00+00:00,S,247.0,29.0,31.0,-15.0,Measurement using limited available frames of STEREO A COR2 imagery before the leading edge of the CME becomes too faint to measure. The measurement is based on the approximate source location and is approximate due to the possible deflection of the eruption and the eruption's longitudinal extent.
+2026-10-17 04:17:00+00:00,S,270.0,30.0,19.0,145.0,Analysis based on the fit of the clear front in two coronagraphs (SOHO LASCO and STEREO A COR2) and confirmed by the somewhat approximate location of the source in EUV imagery.
+2026-10-17 06:32:00+00:00,O,1048.0,38.0,-4.0,-99.0,"Measurement based on best fit among SOHO LASCO C2/C3, GOES CCOR-1, and STEREO A COR2."
+2026-10-19 04:12:00+00:00,S,375.0,10.0,17.0,30.0,Measurement based on approximate source location and best fit in GOES CCOR-1.
+2026-10-19 23:45:00+00:00,S,387.0,27.0,38.0,149.0,"Measurement based on best fit among SOHO LASCO C2/C3, GOES CCOR-1, and STEREO A COR2."
