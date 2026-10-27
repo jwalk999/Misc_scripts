@@ -1,4 +1,3 @@
-Readme · MD
 # Wikipedia Search
  
 A small Python script that searches Wikipedia and saves an article's summary to a text file.
