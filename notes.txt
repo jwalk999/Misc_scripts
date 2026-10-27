@@ -15,4 +15,3 @@ python:
     $   pyside6-designer            # Open pyside6 designer window
     $   auto-py-to-exe              # Start auto py to exe
 
-
