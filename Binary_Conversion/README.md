@@ -5,6 +5,7 @@ Prompts user to input the kind of value they would like to convert<br>
 Then converts it using FUNctions and MATH!</p>
 
 <h2>Conversion Types</h1>
+
 ## Binary
 ### -> Decimal
 ### -> Hexadecimal
