@@ -3,11 +3,11 @@ i = 0
 while i <= 100:
     i += 1
     if i % 3 == 0 and i % 5 == 0:
-        print("fizzbuzz")
+        print("FizzBuzz")
     elif i % 5 == 0:
-        print("buzz")
+        print("Buzz")
     elif i % 3 == 0:
-        print("fizz")
+        print("Fizz")
     else:
         print(i)
 # Wow so easy
