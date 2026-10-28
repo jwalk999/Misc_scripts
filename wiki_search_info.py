@@ -1,1 +1,0 @@
-USER_AGENT = "jrw-py-practice; (rrebelson24@gmail.com)"
