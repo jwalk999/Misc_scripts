@@ -1,2 +1,2 @@
-# Misc Scripts
-Just a collection of random scripts.
+# Misc_scripts
+A collection of one-off scripts I have made.
