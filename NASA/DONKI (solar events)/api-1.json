@@ -1,0 +1,2259 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "DONKI Webservice API",
+    "version": "1.0",
+    "summary": "Database Of Notifications, Knowledge, Information (DONKI) webservice.",
+    "description": "Database Of Notifications, Knowledge, Information (DONKI) webservice.",
+    "termsOfService": "https://ccmc.gsfc.nasa.gov/tools/DONKI/#rules-of-the-road",
+    "contact": {
+      "name": "NASA CCMC",
+      "url": "https://ccmc.gsfc.nasa.gov"
+    }
+  },
+  "externalDocs": {
+    "description": "DONKI Info",
+    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/"
+  },
+  "servers": [
+    {
+      "url": "https://ccmc.gsfc.nasa.gov/DONKI-API/get",
+      "description": "NASA CCMC DONKI webservice"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Events"
+    },
+    {
+      "name": "Simulations"
+    },
+    {
+      "name": "Notifications"
+    }
+  ],
+  "paths": {
+    "/CME": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Coronal Mass Ejection (CME)",
+        "operationId": "getCoronalMassEjections",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2017-01-03"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2017-01-03"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CME"
+                  }
+                },
+                "example": [
+                  {
+                    "activityID": "2017-01-03T03:12:00-CME-001",
+                    "catalog": "M2M_CATALOG",
+                    "startTime": "2017-01-03T03:12Z",
+                    "instruments": [
+                      {
+                        "displayName": "SOHO: LASCO/C2"
+                      },
+                      {
+                        "displayName": "SOHO: LASCO/C3"
+                      }
+                    ],
+                    "sourceLocation": "",
+                    "activeRegionNum": null,
+                    "note": "The CME has two stages, the first starting at 03:12Z and the second at 06:00Z. The second stage merges with the first stage and that is what is measured. The source is a small off limb eruption in the SE of SDO AIA 171 between 01:55Z and 02:43Z.",
+                    "submissionTime": "2017-01-03T19:40Z",
+                    "versionId": 2,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/12056/-1",
+                    "cmeAnalyses": [
+                      {
+                        "isMostAccurate": true,
+                        "time21_5": "2017-01-03T13:08Z",
+                        "latitude": -10,
+                        "longitude": -105,
+                        "halfAngle": 20,
+                        "speed": 645,
+                        "type": "C",
+                        "featureCode": "null",
+                        "imageType": null,
+                        "measurementTechnique": "null",
+                        "note": "Measured using SOHO LASCO C3 imagery.",
+                        "levelOfData": 0,
+                        "tilt": null,
+                        "minorHalfWidth": null,
+                        "speedMeasuredAtHeight": null,
+                        "submissionTime": "2017-01-03T18:49Z",
+                        "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/12059/-1",
+                        "enlilList": [
+                          {
+                            "modelCompletionTime": "2017-01-03T21:57Z",
+                            "au": 2,
+                            "estimatedShockArrivalTime": null,
+                            "estimatedDuration": null,
+                            "rmin_re": null,
+                            "kp_18": null,
+                            "kp_90": null,
+                            "kp_135": null,
+                            "kp_180": null,
+                            "isEarthGB": false,
+                            "isEarthMinorImpact": false,
+                            "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/WSA-ENLIL/12061/-1",
+                            "impactList": [
+                              {
+                                "isGlancingBlow": false,
+                                "isMinorImpact": false,
+                                "location": "Spitzer",
+                                "arrivalTime": "2017-01-06T07:31Z"
+                              },
+                              {
+                                "isGlancingBlow": true,
+                                "isMinorImpact": false,
+                                "location": "Mars",
+                                "arrivalTime": "2017-01-07T06:00Z"
+                              },
+                              {
+                                "isGlancingBlow": true,
+                                "isMinorImpact": false,
+                                "location": "STEREO A",
+                                "arrivalTime": "2017-01-06T00:00Z"
+                              }
+                            ],
+                            "cmeIDs": [
+                              "2017-01-03T03:12:00-CME-001"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "isMostAccurate": false,
+                        "time21_5": "2017-01-03T18:39Z",
+                        "latitude": -12,
+                        "longitude": -110,
+                        "halfAngle": 13,
+                        "speed": 270,
+                        "type": "S",
+                        "featureCode": "null",
+                        "imageType": null,
+                        "measurementTechnique": "null",
+                        "note": "",
+                        "levelOfData": 0,
+                        "tilt": null,
+                        "minorHalfWidth": null,
+                        "speedMeasuredAtHeight": null,
+                        "submissionTime": "2017-01-03T12:34Z",
+                        "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/12057/-1",
+                        "enlilList": []
+                      }
+                    ],
+                    "linkedEvents": null,
+                    "sentNotifications": [
+                      {
+                        "messageID": "20170103-AL-001",
+                        "messageIssueTime": "2017-01-03T23:31Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/12062/1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/CME?startDate=2017-01-03&endDate=2017-01-03'"
+          }
+        ]
+      }
+    },
+    "/CMEAnalysis": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Coronal Mass Ejection (CME) Analysis",
+        "operationId": "getCmeAnalyses",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-09-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-09-30"
+          },
+          {
+            "name": "mostAccurateOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "example": true
+          },
+          {
+            "name": "completeEntryOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          {
+            "name": "speed",
+            "in": "query",
+            "description": "Minimum speed in km/s.",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "default": 0
+            },
+            "example": 500
+          },
+          {
+            "name": "halfAngle",
+            "in": "query",
+            "description": "Minimum half angle in degrees.",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "default": 0
+            },
+            "example": 30
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG",
+                "SWPC_ANNEX_CME_CATALOG",
+                "SEPVAL_CME_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "Catalog keyword, such as swpc_annex or sepval2023.",
+            "schema": {
+              "type": "string",
+              "default": "NONE"
+            }
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "SH",
+                "LE",
+                "TE",
+                "RHB",
+                "LHB",
+                "BW",
+                "COR",
+                "DIS"
+              ],
+              "default": "ALL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CMEAnalysis"
+                  }
+                },
+                "example": [
+                  {
+                    "time21_5": "2016-09-06T14:18Z",
+                    "latitude": -20,
+                    "longitude": 120,
+                    "halfAngle": 31,
+                    "speed": 674,
+                    "type": "C",
+                    "isMostAccurate": true,
+                    "associatedCMEID": "2016-09-06T08:54:00-CME-001",
+                    "associatedCMEstartTime": "2016-09-06T08:54Z",
+                    "note": "",
+                    "associatedCMELink": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/11226/-1",
+                    "catalog": "M2M_CATALOG",
+                    "featureCode": "null",
+                    "dataLevel": "1",
+                    "measurementTechnique": "null",
+                    "imageType": "null",
+                    "tilt": null,
+                    "minorHalfWidth": null,
+                    "speedMeasuredAtHeight": null,
+                    "submissionTime": "2016-09-06T15:43Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/11233/-1"
+                  },
+                  {
+                    "time21_5": "2016-09-15T04:24Z",
+                    "latitude": -18,
+                    "longitude": -122,
+                    "halfAngle": 43,
+                    "speed": 722,
+                    "type": "C",
+                    "isMostAccurate": true,
+                    "associatedCMEID": "2016-09-14T23:36:00-CME-001",
+                    "associatedCMEstartTime": "2016-09-14T23:36Z",
+                    "note": "Measured with swpc_cat using C3 and STA Cor2 imagery.",
+                    "associatedCMELink": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/11255/-1",
+                    "catalog": "M2M_CATALOG",
+                    "featureCode": "null",
+                    "dataLevel": "1",
+                    "measurementTechnique": "null",
+                    "imageType": "null",
+                    "tilt": null,
+                    "minorHalfWidth": null,
+                    "speedMeasuredAtHeight": null,
+                    "submissionTime": "2016-09-15T13:22Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/11256/-1"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/CMEAnalysis?startDate=2016-09-01&endDate=2016-09-30&mostAccurateOnly=true&speed=500&halfAngle=30&catalog=ALL'"
+          }
+        ]
+      }
+    },
+    "/GST": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Geomagnetic Storm (GST)",
+        "operationId": "getGeomagneticStorms",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-30"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GST"
+                  }
+                },
+                "example": [
+                  {
+                    "gstID": "2016-01-21T03:00:00-GST-001",
+                    "startTime": "2016-01-21T03:00Z",
+                    "allKpIndex": [
+                      {
+                        "observedTime": "2016-01-21T06:00Z",
+                        "kpIndex": 6,
+                        "source": "NOAA"
+                      }
+                    ],
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/GST/10074/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-15T00:00:00-CME-001"
+                      },
+                      {
+                        "activityID": "2016-01-21T10:00:00-HSS-001"
+                      }
+                    ],
+                    "submissionTime": "2016-01-21T06:28Z",
+                    "versionId": 1,
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160121-AL-001",
+                        "messageIssueTime": "2016-01-21T06:28Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10075/1"
+                      },
+                      {
+                        "messageID": "20160121-AL-002",
+                        "messageIssueTime": "2016-01-21T13:16Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10077/1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/GST?startDate=2016-01-01&endDate=2016-01-30'"
+          }
+        ]
+      }
+    },
+    "/IPS": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Interplanetary Shock (IPS)",
+        "operationId": "getInterplanetaryShocks",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-30"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Earth",
+                "Mars",
+                "MESSENGER",
+                "STEREO A",
+                "STEREO B"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG",
+                "WINSLOW_MESSENGER_ICME_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IPS"
+                  }
+                },
+                "example": [
+                  {
+                    "catalog": "M2M_CATALOG",
+                    "activityID": "2016-01-09T18:00:00-IPS-001",
+                    "location": "STEREO A",
+                    "eventTime": "2016-01-09T18:00Z",
+                    "submissionTime": "2016-01-11T21:18Z",
+                    "versionId": 2,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/IPS/10028/-1",
+                    "instruments": [
+                      {
+                        "displayName": "STEREO A: IMPACT"
+                      },
+                      {
+                        "displayName": "STEREO A: PLASTIC"
+                      }
+                    ],
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-06T14:24:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": null
+                  },
+                  {
+                    "catalog": "M2M_CATALOG",
+                    "activityID": "2016-01-18T21:00:00-IPS-001",
+                    "location": "Earth",
+                    "eventTime": "2016-01-18T21:00Z",
+                    "submissionTime": "2016-01-19T05:31Z",
+                    "versionId": 2,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/IPS/10067/-1",
+                    "instruments": [
+                      {
+                        "displayName": "ACE: MAG"
+                      },
+                      {
+                        "displayName": "ACE: SWEPAM"
+                      }
+                    ],
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-15T00:00:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": null
+                  },
+                  {
+                    "catalog": "M2M_CATALOG",
+                    "activityID": "2016-01-21T00:48:00-IPS-001",
+                    "location": "Earth",
+                    "eventTime": "2016-01-21T00:48Z",
+                    "submissionTime": "2016-01-21T00:52Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/IPS/10072/-1",
+                    "instruments": [
+                      {
+                        "displayName": "ACE: MAG"
+                      },
+                      {
+                        "displayName": "ACE: SWEPAM"
+                      }
+                    ],
+                    "linkedEvents": null,
+                    "sentNotifications": null
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/IPS?startDate=2016-01-01&endDate=2016-01-30'"
+          }
+        ]
+      }
+    },
+    "/FLR": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Solar Flare (FLR)",
+        "operationId": "getSolarFlares",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-30"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "M2M_CATALOG",
+                "MAVEN_EUVM_FLARE_CATALOG",
+                "ALL"
+              ],
+              "default": "M2M_CATALOG"
+            }
+          },
+          {
+            "name": "class",
+            "in": "query",
+            "description": "One or more comma-separated flare classes (A, B, C, M, X), or ALL.",
+            "schema": {
+              "type": "string",
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FLR"
+                  }
+                },
+                "example": [
+                  {
+                    "flrID": "2016-01-01T23:10:00-FLR-001",
+                    "catalog": "M2M_CATALOG",
+                    "instruments": [
+                      {
+                        "displayName": "GOES-P: EXIS 1.0-8.0"
+                      }
+                    ],
+                    "beginTime": "2016-01-01T23:10Z",
+                    "peakTime": "2016-01-02T00:11Z",
+                    "endTime": "2016-01-02T01:01Z",
+                    "classType": "M2.3",
+                    "sourceLocation": "S21W73",
+                    "activeRegionNum": 12473,
+                    "note": "Associated eruption visible in SDO AIA 171. 193, and 304 with opening field lines and filament liftoff.",
+                    "submissionTime": "2025-09-09T19:05Z",
+                    "versionId": 5,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/FLR/9963/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-01T23:12:00-CME-001"
+                      },
+                      {
+                        "activityID": "2016-01-02T02:48:00-SEP-001"
+                      },
+                      {
+                        "activityID": "2016-01-02T04:30:00-SEP-001"
+                      }
+                    ],
+                    "sentNotifications": null
+                  },
+                  {
+                    "flrID": "2016-01-28T11:48:00-FLR-001",
+                    "catalog": "M2M_CATALOG",
+                    "instruments": [
+                      {
+                        "displayName": "GOES15: SEM/XRS 1.0-8.0"
+                      }
+                    ],
+                    "beginTime": "2016-01-28T11:48Z",
+                    "peakTime": "2016-01-28T12:02Z",
+                    "endTime": "2016-01-28T12:56Z",
+                    "classType": "C9.6",
+                    "sourceLocation": "N03W47",
+                    "activeRegionNum": 12488,
+                    "note": "",
+                    "submissionTime": "2016-01-28T22:31Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/FLR/10122/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-28T12:24:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": null
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/FLR?startDate=2016-01-01&endDate=2016-01-30'"
+          }
+        ]
+      }
+    },
+    "/SEP": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Solar Energetic Particle (SEP)",
+        "operationId": "getSolarEnergeticParticleEvents",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-30"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SEP"
+                  }
+                },
+                "example": [
+                  {
+                    "sepID": "2016-01-02T02:48:00-SEP-001",
+                    "eventTime": "2016-01-02T02:48Z",
+                    "instruments": [
+                      {
+                        "displayName": "SOHO: COSTEP 15.8-39.8 MeV"
+                      }
+                    ],
+                    "submissionTime": "2016-01-02T04:45Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/9966/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-01T23:10:00-FLR-001"
+                      },
+                      {
+                        "activityID": "2016-01-01T23:12:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160102-AL-002",
+                        "messageIssueTime": "2016-01-02T04:51Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/9967/1"
+                      }
+                    ]
+                  },
+                  {
+                    "sepID": "2016-01-02T04:30:00-SEP-001",
+                    "eventTime": "2016-01-02T04:30Z",
+                    "instruments": [
+                      {
+                        "displayName": "GOES13: SEM/EPS >10 MeV"
+                      }
+                    ],
+                    "submissionTime": "2016-01-02T04:41Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/9964/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-01T23:10:00-FLR-001"
+                      },
+                      {
+                        "activityID": "2016-01-01T23:12:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160102-AL-001",
+                        "messageIssueTime": "2016-01-02T04:41Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/9965/1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/SEP?startDate=2016-01-01&endDate=2016-01-30'"
+          }
+        ]
+      }
+    },
+    "/MPC": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Magnetopause Crossing (MPC)",
+        "operationId": "getMagnetopauseCrossings",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-03-31"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MPC"
+                  }
+                },
+                "example": [
+                  {
+                    "mpcID": "2016-03-06T16:32:00-MPC-001",
+                    "eventTime": "2016-03-06T16:32Z",
+                    "instruments": [
+                      {
+                        "displayName": "MODEL: SWMF"
+                      }
+                    ],
+                    "submissionTime": "2016-03-06T16:26Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/MPC/10300/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-03-06T04:30:00-IPS-001"
+                      },
+                      {
+                        "activityID": "2016-03-06T09:00:00-HSS-001"
+                      },
+                      {
+                        "activityID": "2016-03-06T18:00:00-GST-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160306-AL-001",
+                        "messageIssueTime": "2016-03-06T16:59Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10301/1"
+                      }
+                    ]
+                  },
+                  {
+                    "mpcID": "2016-03-11T13:00:00-MPC-001",
+                    "eventTime": "2016-03-11T13:00Z",
+                    "instruments": [
+                      {
+                        "displayName": "MODEL: SWMF"
+                      }
+                    ],
+                    "submissionTime": "2016-03-11T13:53Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/MPC/10323/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-03-11T04:21:00-IPS-001"
+                      },
+                      {
+                        "activityID": "2016-03-11T12:00:00-GST-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160311-AL-001",
+                        "messageIssueTime": "2016-03-11T13:55Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10324/1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/MPC?startDate=2016-01-01&endDate=2016-03-31'"
+          }
+        ]
+      }
+    },
+    "/RBE": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Radiation Belt Enhancement (RBE)",
+        "operationId": "getRadiationBeltEnhancements",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-31"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RBE"
+                  }
+                },
+                "example": [
+                  {
+                    "rbeID": "2016-01-02T12:25:00-RBE-001",
+                    "eventTime": "2016-01-02T12:25Z",
+                    "instruments": [
+                      {
+                        "displayName": "GOES13: SEM/EPS >0.8 MeV"
+                      }
+                    ],
+                    "submissionTime": "2016-01-02T13:25Z",
+                    "versionId": 2,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/RBE/9969/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2015-12-28T12:39:00-CME-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160102-AL-003",
+                        "messageIssueTime": "2016-01-02T12:39Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/9970/1"
+                      },
+                      {
+                        "messageID": "20160102-AL-004",
+                        "messageIssueTime": "2016-01-02T13:30Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/9971/1"
+                      }
+                    ]
+                  },
+                  {
+                    "rbeID": "2016-01-24T15:05:00-RBE-001",
+                    "eventTime": "2016-01-24T15:05Z",
+                    "instruments": [
+                      {
+                        "displayName": "GOES13: SEM/EPS >0.8 MeV"
+                      }
+                    ],
+                    "submissionTime": "2016-01-24T16:26Z",
+                    "versionId": 3,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/RBE/10088/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-21T10:00:00-HSS-001"
+                      }
+                    ],
+                    "sentNotifications": [
+                      {
+                        "messageID": "20160124-AL-001",
+                        "messageIssueTime": "2016-01-24T15:22Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10089/1"
+                      },
+                      {
+                        "messageID": "20160124-AL-002",
+                        "messageIssueTime": "2016-01-24T16:23Z",
+                        "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/10090/1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/RBE?startDate=2016-01-01&endDate=2016-01-31'"
+          }
+        ]
+      }
+    },
+    "/HSS": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "High Speed Stream (HSS)",
+        "operationId": "getHighSpeedStreams",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 30 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-31"
+          },
+          {
+            "name": "catalog",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "M2M_CATALOG"
+              ],
+              "default": "ALL"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ALL",
+                "Latest"
+              ],
+              "default": "Latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HSS"
+                  }
+                },
+                "example": [
+                  {
+                    "hssID": "2016-01-11T12:00:00-HSS-001",
+                    "eventTime": "2016-01-11T12:00Z",
+                    "instruments": [
+                      {
+                        "displayName": "ACE: SWEPAM"
+                      },
+                      {
+                        "displayName": "ACE: MAG"
+                      }
+                    ],
+                    "submissionTime": "2016-01-11T21:08Z",
+                    "versionId": 1,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/HSS/10029/-1",
+                    "linkedEvents": null,
+                    "sentNotifications": null
+                  },
+                  {
+                    "hssID": "2016-01-21T10:00:00-HSS-001",
+                    "eventTime": "2016-01-21T10:00Z",
+                    "instruments": [
+                      {
+                        "displayName": "ACE: SWEPAM"
+                      },
+                      {
+                        "displayName": "ACE: MAG"
+                      }
+                    ],
+                    "submissionTime": "2016-01-21T13:13Z",
+                    "versionId": 2,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/HSS/10076/-1",
+                    "linkedEvents": [
+                      {
+                        "activityID": "2016-01-21T03:00:00-GST-001"
+                      },
+                      {
+                        "activityID": "2016-01-24T15:05:00-RBE-001"
+                      }
+                    ],
+                    "sentNotifications": null
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/HSS?startDate=2016-01-01&endDate=2016-01-31'"
+          }
+        ]
+      }
+    },
+    "/WSAEnlilSimulations": {
+      "get": {
+        "tags": [
+          "Simulations"
+        ],
+        "summary": "WSA-ENLIL+Cone Simulation",
+        "operationId": "getWsaEnlilSimulations",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 7 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-06"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2016-01-06"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WsaEnlilSimulation"
+                  }
+                },
+                "example": [
+                  {
+                    "simulationID": "WSA-ENLIL/10003/1",
+                    "modelCompletionTime": "2016-01-06T02:34Z",
+                    "au": 2,
+                    "cmeInputs": [
+                      {
+                        "cmeStartTime": "2016-01-05T04:36Z",
+                        "latitude": -21,
+                        "longitude": 105,
+                        "speed": 530,
+                        "halfAngle": 19,
+                        "time21_5": "2016-01-05T04:36Z",
+                        "featureCode": "null",
+                        "isMostAccurate": true,
+                        "levelOfData": 1,
+                        "ipsList": [],
+                        "cmeid": "2016-01-05T04:36:00-CME-001"
+                      }
+                    ],
+                    "estimatedShockArrivalTime": null,
+                    "estimatedDuration": null,
+                    "rmin_re": null,
+                    "kp_18": null,
+                    "kp_90": null,
+                    "kp_135": null,
+                    "kp_180": null,
+                    "isEarthGB": false,
+                    "isEarthMinorImpact": false,
+                    "impactList": null,
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/WSA-ENLIL/10003/-1"
+                  },
+                  {
+                    "simulationID": "WSA-ENLIL/10005/1",
+                    "modelCompletionTime": "2016-01-06T18:34Z",
+                    "au": 2,
+                    "cmeInputs": [
+                      {
+                        "cmeStartTime": "2016-01-06T14:24Z",
+                        "latitude": -7,
+                        "longitude": 138,
+                        "speed": 940,
+                        "halfAngle": 45,
+                        "time21_5": "2016-01-06T17:59Z",
+                        "featureCode": "null",
+                        "isMostAccurate": true,
+                        "levelOfData": 1,
+                        "ipsList": [
+                          {
+                            "catalog": null,
+                            "activityID": "2016-01-09T18:00:00-IPS-001",
+                            "location": "STEREO A",
+                            "eventTime": "2016-01-09T18:00Z",
+                            "submissionTime": null,
+                            "versionId": 0,
+                            "link": null,
+                            "instruments": [
+                              {
+                                "displayName": "STEREO A: IMPACT"
+                              },
+                              {
+                                "displayName": "STEREO A: PLASTIC"
+                              }
+                            ],
+                            "linkedEvents": [],
+                            "sentNotifications": []
+                          }
+                        ],
+                        "cmeid": "2016-01-06T14:24:00-CME-001"
+                      }
+                    ],
+                    "estimatedShockArrivalTime": null,
+                    "estimatedDuration": null,
+                    "rmin_re": null,
+                    "kp_18": null,
+                    "kp_90": null,
+                    "kp_135": null,
+                    "kp_180": null,
+                    "isEarthGB": false,
+                    "isEarthMinorImpact": false,
+                    "impactList": [
+                      {
+                        "isGlancingBlow": false,
+                        "isMinorImpact": false,
+                        "location": "STEREO B",
+                        "arrivalTime": "2016-01-08T22:56Z"
+                      },
+                      {
+                        "isGlancingBlow": true,
+                        "isMinorImpact": false,
+                        "location": "STEREO A",
+                        "arrivalTime": "2016-01-09T08:00Z"
+                      }
+                    ],
+                    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/WSA-ENLIL/10005/-1"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/WSAEnlilSimulations?startDate=2016-01-06&endDate=2016-01-06'"
+          }
+        ]
+      }
+    },
+    "/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Notifications",
+        "operationId": "getNotifications",
+        "description": "The requested range is limited to 30 days.",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "description": "Start date in UTC (yyyy-MM-dd). Defaults to 7 days before the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2014-05-01"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "description": "End date in UTC (yyyy-MM-dd). Defaults to the current UTC date.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2014-05-08"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "all",
+                "FLR",
+                "SEP",
+                "CME",
+                "IPS",
+                "MPC",
+                "GST",
+                "RBE",
+                "report"
+              ],
+              "default": "all"
+            },
+            "example": "all"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notification"
+                  }
+                },
+                "example": [
+                  {
+                    "messageType": "FLR",
+                    "messageID": "20140508-AL-002",
+                    "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/5432/1",
+                    "messageIssueTime": "2014-05-08T12:43Z",
+                    "messageBody": "## NASA Goddard Space Flight Center, Space Weather Research Center ( SWRC )\n## Message Type: Space Weather Notification - M5.2 Flare\n##\n## Message Issue Date: 2014-05-08T12:43:04Z\n## Message ID: 20140508-AL-002\n##\n## Disclaimer: NOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly.\n\n\n## Summary:\n\nSignificant flare detected by GOES.\n\nFlare start time: 2014-05-08T09:20Z. \n\nFlare peak time: 2014-05-08T10:07Z.\n\nFlare intensity: M5.2 class.\n\nSource region: N05E55 (Active Region 12056) (based on SDO imagery).\n\nIncreased energetic proton fluxes possible. Updates on this event will be provided when available.\n\nActivity ID: 2014-05-08T09:20:00-FLR-001.\n\n## Notes: \n\n\n\nNASA GSFC Space Weather Research Center ( SWRC, http://swrc.gsfc.nasa.gov ) Disclaimer\n\nData and/or information from the NASA GSFC Space Weather Research Center is provided \"as is\" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and / or compiled by the NASA GSFC Space Weather Research Center, and distributes it \"as is\".\n\nUse of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.\n\nThe terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.\n\nFor questions, comments, requests etc. contact: GSFC-Space-Weather-Center (gsfc-swrc@mail.nasa.gov)\n\nNOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly."
+                  },
+                  {
+                    "messageType": "CME",
+                    "messageID": "20140508-AL-001",
+                    "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/5429/1",
+                    "messageIssueTime": "2014-05-08T03:18Z",
+                    "messageBody": "## NASA Goddard Space Flight Center, Space Weather Research Center ( SWRC )\n## Message Type: Space Weather Notification - CMEs (STEREO A)\n##\n## Message Issue Date: 2014-05-08T03:18:36Z\n## Message ID: 20140508-AL-001\n##\n## Disclaimer: NOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly.\n\n\n## Summary:\n\nMultiple CMEs have been detected as follows:\n1: S-type CME detected by STEREO B / SOHO. \n\nStart time of the event: 2014-05-06T18:09Z.\n\nEstimated speed: ~460 km/s.\n\nEstimated opening half-angle: 47 deg.\n\nDirection (lon./lat.): 108/5 in Heliocentric Earth Equatorial coordinates (see [1] in Notes).\n\nActivity ID: 2014-05-06T18:09:00-CME-001\n\n2: C-type CME detected by STEREO B / SOHO. \n\nStart time of the event: 2014-05-06T22:17Z.\n\nEstimated speed: ~570 km/s.\n\nEstimated opening half-angle: 32 deg.\n\nDirection (lon./lat.): 103/-3 in Heliocentric Earth Equatorial coordinates.\n\nActivity ID: 2014-05-06T22:17:00-CME-001\n\n3: O-type CME detected by STEREO B. \n\nStart time of the event: 2014-05-07T16:39Z.\n\nEstimated speed: ~1110 km/s.\n\nEstimated opening half-angle: 41 deg.\n\nDirection (lon./lat.): 122/-6 in Heliocentric Earth Equatorial coordinates.\n\nActivity ID: 2014-05-07T16:39:00-CME-001\n\nBased on preliminary heliospheric modeling carried out at NASA GSFC Space Weather Research Center, it is estimated that the CMEs may impact STEREO A.  The leading edge of the CMEs will reach STEREO A at 2014-05-09T17:33Z (plus minus 7 hours). \n\n\nLinks to the movies of the modeled event (includes CME(s): 2014-05-06T18:09:00-CME-001, 2014-05-06T22:17:00-CME-001, 2014-05-07T16:39:00-CME-001):\n\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-den.gif\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-vel.gif\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-den-Stereo_A.gif\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-den-Stereo_B.gif\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-vel-Stereo_A.gif\nhttp://iswa.gsfc.nasa.gov/downloads/20140507_015300_2.0_anim.tim-vel-Stereo_B.gif\n\n\n## Notes: \n\nThis CME event (2014-05-06T22:17:00-CME-001) is associated with M1.0 flare with ID 2014-05-06T22:01:00-FLR-001 which peaked at 2014-05-06T22:09Z.\n\nThis CME event (2014-05-07T16:39:00-CME-001) is associated with M1.2 flare with ID 2014-05-07T16:07:00-FLR-001 which peaked at 2014-05-07T16:29Z.\n\n[1] http://iswa.ccmc.gsfc.nasa.gov/wiki/index.php/Glossary/Heliospheric_Earth_Equatorial_coordinates\n\nSCORE CME typification system:\nS-type: CMEs with speeds less than 500 km/s\nC-type: Common 500-999 km/s\nO-type: Occasional 1000-1999 km/s\nR-type: Rare 2000-2999 km/s\nER-type: Extremely Rare >3000 km/s\nhttp://swrc.gsfc.nasa.gov/main/score\n\n\nNASA GSFC Space Weather Research Center ( SWRC, http://swrc.gsfc.nasa.gov ) Disclaimer\n\nData and/or information from the NASA GSFC Space Weather Research Center is provided \"as is\" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and / or compiled by the NASA GSFC Space Weather Research Center, and distributes it \"as is\".\n\nUse of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.\n\nThe terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.\n\nFor questions, comments, requests etc. contact: GSFC-Space-Weather-Center (gsfc-swrc@mail.nasa.gov)\n\nNOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly."
+                  },
+                  {
+                    "messageType": "Report",
+                    "messageID": "20140507-7D-001",
+                    "messageURL": "https://ccmc.gsfc.nasa.gov/DONKI/view/Alert/5424/1",
+                    "messageIssueTime": "2014-05-07T22:08Z",
+                    "messageBody": "## NASA Goddard Space Flight Center, Space Weather Research Center ( SWRC )\n## Message Type: Weekly Space Weather Summary Report for April 30, 2014 - May 06, 2014\n##\n## Message Issue Date: 2014-05-07T22:08:35Z\n## Report Coverage Begin Date: 2014-04-30T00:00Z\n## Report Coverage End Date: 2014-05-06T23:59Z\n## Message ID: 20140507-7D-001\n##\n## Disclaimer: NOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly.\n\n\n## Summary:\n\nSolar activity was at low levels during this reporting period with two M-class flares (see list below).  There were five C-type CMEs (see details below).  The western flank of the CMEs starting at 2014-05-06T22:17Z and 2014-05-07T16:39Z are expected to arrive at STEREO A at around 2014-05-10T03:25Z (plus minus 7 hours).\n\nGeomagnetic activity was at below minor levels with Kp index (a measure of geomagnetic activity, ranging 0-9) <=4 for the reporting period.   The Kp index reached 4 during the periods 2014-04-30T06:00Z-09:00Z and 12:00Z-15:00Z due to an extended period of southward interplanetary magnetic field possibly from a transient.  The Kp index reached 4 again during the period 2014-05-04T03:00-09:00Z due to the possible arrival of a CME starting at 2014-04-29T23:36Z, detected by ACE at L1 at 2014-05-03T16:48Z.  \n\nThe > 0.8 MeV energetic electron flux detected at GOES remained below the threshold level of 10^5 pfu for the entire reporting period, but was slightly elevated towards the beginning of the period.\n\nThe energetic proton flux of >10 MeV protons detected at GOES, and the 13-100 MeV protons at STEREO A and STEREO B were all at background levels for the entire reporting period. \n\nSpace Weather Impact:\nSpace weather impacts on spacecraft are expected to have been low this week.\n\n\n##Events:\nFlares (M-class and above)\nDate         Start     Stop      Peak      Class   Location         \n2014-05-06  08:40:00  09:24:00  09:03:00   M1.8   S13W87 ( 12051 ) \n2014-05-06  22:01:00  22:20:00  22:09:00   M1.0   S09W91 ( 12051 ) \n\nCMEs (>500 km/s):\nEarth directed:\nStarting time        Speed (km/s)   Type   Direction (LON/LAT in HEEQ)   Half-Angle width (degrees)  Detecting spacecraft (real-time)  \n2014-05-03T06:24Z     ~576            C                51/11                25                          SOHO, STEREO A, STEREO B  \n\nNon-Earth directed:\nStarting time        Speed (km/s)   Type   Direction (LON/LAT in HEEQ)   Half-Angle width (degrees)  Detecting spacecraft (real-time)  \n2014-05-02T05:36Z     ~894            C               -99/1                 25                          SOHO, STEREO A, STEREO B          \n2014-05-03T20:48Z     ~630            C                65/12                36                          SOHO, STEREO A                    \n2014-05-05T15:36Z     ~916            C               -84/19                9                           SOHO, STEREO B                    \n2014-05-06T22:17Z     ~570            C               103/-3                32                          SOHO, STEREO B                    \n \n\n## Space Weather Outlook:\n## Outlook Coverage Begin Date: 2014-05-07T00:00Z \n## Outlook Coverage End Date:  2014-05-13T23:59Z\n\nThe solar and geomagnetic activity is expected to be low to moderate levels for the upcoming week.\n\n## Notes: \nSCORE CME typification system:\nS-type: CMEs with speeds less than 500 km/s\nC-type: Common 500-999 km/s\nO-type: Occasional 1000-1999 km/s\nR-type: Rare 2000-2999 km/s\nER-type: Extremely Rare >3000 km/s\nhttp://swc.gsfc.nasa.gov/main/score\n\n\nNASA GSFC Space Weather Research Center ( SWRC, http://swrc.gsfc.nasa.gov ) Disclaimer\n\nData and/or information from the NASA GSFC Space Weather Research Center is provided \"as is\" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and / or compiled by the NASA GSFC Space Weather Research Center, and distributes it \"as is\".\n\nUse of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information from the NASA GSFC Space Weather Research Center does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.\n\nThe terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.\n\nFor questions, comments, requests etc. contact: GSFC-Space-Weather-Center (gsfc-swrc@mail.nasa.gov)\n\nNOAA's Space Weather Prediction Center (http://swpc.noaa.gov) is the United States Government official source for space weather forecasts. This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "Shell",
+            "label": "cURL",
+            "source": "curl --request GET --url 'https://ccmc.gsfc.nasa.gov/DONKI-API/get/notifications?startDate=2014-05-01&endDate=2014-05-08&type=all'"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Instrument": {
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "type": "string"
+          }
+        }
+      },
+      "SentNotification": {
+        "type": "object",
+        "properties": {
+          "messageID": {
+            "type": "string"
+          },
+          "messageIssueTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "messageURL": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "CME": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          },
+          "sourceLocation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "activeRegionNum": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "cmeAnalyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CMEAnalysis"
+            }
+          }
+        }
+      },
+      "CMEAnalysis": {
+        "type": "object",
+        "properties": {
+          "time21_5": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "latitude": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "longitude": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "halfAngle": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "speed": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "isMostAccurate": {
+            "type": "boolean"
+          },
+          "associatedCMEID": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "catalog": {
+            "type": "string"
+          }
+        }
+      },
+      "GST": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "gstID": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "allKpIndex": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "observedTime": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "kpIndex": {
+                  "type": "number"
+                },
+                "source": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "IPS": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "location": {
+            "type": "string"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "FLR": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "flrID": {
+            "type": "string"
+          },
+          "beginTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "peakTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "classType": {
+            "type": "string"
+          },
+          "sourceLocation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "activeRegionNum": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "SEP": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "sepID": {
+            "type": "string"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "MPC": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "mpcID": {
+            "type": "string"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "RBE": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "rbeID": {
+            "type": "string"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "HSS": {
+        "type": "object",
+        "properties": {
+          "catalog": {
+            "type": "string"
+          },
+          "activityID": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "versionId": {
+            "type": "integer"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri"
+          },
+          "linkedEvents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activityID": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "sentNotifications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentNotification"
+            }
+          },
+          "hssID": {
+            "type": "string"
+          },
+          "eventTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "instruments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "WsaEnlilSimulation": {
+        "type": "object",
+        "properties": {
+          "simulationID": {
+            "type": "string"
+          },
+          "modelCompletionTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "au": {
+            "type": "number"
+          },
+          "estimatedShockArrivalTime": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "estimatedDuration": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rmin_re": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kp_18": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kp_90": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kp_135": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "kp_180": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "isEarthGB": {
+            "type": "boolean"
+          },
+          "cmeInputs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "impactList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "ipsList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "Notification": {
+        "type": "object",
+        "description": "A DONKI notification or report.",
+        "additionalProperties": true
+      }
+    }
+  }
+}

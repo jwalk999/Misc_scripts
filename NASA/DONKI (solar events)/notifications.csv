@@ -1,0 +1,120 @@
+messageIssueTime,messageType,messageBody
+2026-10-16T13:28Z,RBE,"## Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information ( CCMC DONKI )
+## Message Type: Auto-generated Space Weather Notification - Radiation Belt Enhancement
+##
+## Message Issue Date: 2026-10-16T13:28:06Z
+## Message ID: 20261016-AL-001
+##
+## Disclaimer: NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly.
+
+
+## Summary:
+
+Significantly elevated energetic electron fluxes in the Earth's outer radiation belt. GOES ""greater than 2.0 MeV"" integral electron flux is above 1000 pfu starting at 2026-10-16T13:20Z. 
+
+
+NASA spacecraft at GEO, MEO and other orbits passing through or in the vicinity of the Earth's outer radiation belt can be impacted.
+
+Activity ID: 2026-10-16T13:20:00-RBE-001. 
+
+## Notes: 
+
+
+
+Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information (CCMC DONKI) Disclaimer
+
+Data and/or information stored within the CCMC DONKI is provided ""as is"" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and/or compiled by CCMC DONKI, and distributes it ""as is"".
+
+Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.
+
+The terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.
+
+NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly."
+2026-10-16T13:43Z,RBE,"## Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information ( CCMC DONKI )
+## Message Type: Space Weather Notification - Radiation Belt Enhancement
+##
+## Message Issue Date: 2026-10-16T13:43:00Z
+## Message ID: 20261016-AL-002
+##
+## Disclaimer: NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly.
+
+
+## Summary:
+
+Significantly elevated energetic electron fluxes in the Earth's outer radiation belt. GOES ""greater than 2.0 MeV"" integral electron flux is above 1000 pfu starting at 2026-10-16T13:20Z. 
+
+The elevated energetic electron flux levels are caused by the arrival of the coronal hole high speed stream starting on 2026-10-10, reaching maximum sustained speeds of approximately 850 km/s. The solar wind speed observed at L1 is currently around 445 km/s. The elevated energetic electron flux levels may also be associated with the combined arrival of CME with ID 2026-10-08T16:24:00-CME-001 and CME with ID 2026-10-08T16:53:00-CME-001. These CMEs and the coronal hole high speed stream were detected at L1 by SOLAR-1 at 2026-10-10T14:33Z (see notification 20261010-AL-001). The energetic electron flux levels may have been further enhanced by the arrival of CME with ID 2026-10-10T16:15:00-CME-001 detected at L1 by SOLAR-1 at 2026-10-13T00:21Z (see notification 20261013-AL-001).
+
+NASA spacecraft at GEO, MEO and other orbits passing through or in the vicinity of the Earth's outer radiation belt can be impacted.
+
+Activity ID: 2026-10-16T13:20:00-RBE-001. 
+
+## Notes: 
+The coronal hole high speed stream starting on 2026-10-10, the CME with ID 2026-10-08T16:24:00-CME-001, as well as the CME with ID 2026-10-08T16:53:00-CME-001 are associated with the geomagnetic storm with ID 2026-10-10T15:00:00-GST-001 (see notifications 20261010-AL-006 and 20261010-AL-007) and modeled magnetopause crossing with ID 2026-10-10T15:33:00-MPC-001 (see notification 20261010-AL-005).
+
+
+Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information (CCMC DONKI) Disclaimer
+
+Data and/or information stored within the CCMC DONKI is provided ""as is"" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and/or compiled by CCMC DONKI, and distributes it ""as is"".
+
+Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.
+
+The terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.
+
+NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly."
+2026-10-17T13:12Z,CME,"## Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information ( CCMC DONKI )
+## Message Type: Space Weather Notification - CME (BepiColombo, Parker Solar Probe, OSIRIS-APEX)
+##
+## Message Issue Date: 2026-10-17T13:12:17Z
+## Message ID: 20261017-AL-001
+##
+## Disclaimer: NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly.
+
+
+## Summary:
+
+O-type CME detected by STEREO A / GOES / SOHO. 
+
+Start time of the event: 2026-10-17T02:48Z.
+
+Estimated speed: ~1048 km/s.
+
+Estimated opening half-angle: 38 deg.
+
+Direction (lon./lat.): -99/-4 in Heliocentric Earth Equatorial coordinates.
+
+Activity ID: 2026-10-17T02:48:00-CME-001
+
+Based on preliminary analysis by the Moon to Mars Space Weather Analysis Office and heliospheric modeling carried out at NASA Community Coordinated Modeling Center, it is estimated that the CME may impact BepiColombo, Parker Solar Probe, and OSIRIS-APEX (glancing blow).  The leading edge of the CME will reach BepiColombo at 2026-10-17T21:43Z and Parker Solar Probe at 2026-10-18T16:32Z (plus minus 7 hours). The flank of the CME may reach OSIRIS-APEX at 2026-10-20T04:00Z (plus minus 7 hours). 
+
+
+Links to the movies of the modeled event (includes CME: 2026-10-17T02:48:00-CME-001):
+
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_anim.tim-den.gif
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_anim.tim-vel.gif
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_ENLIL_CONE_timeline.gif
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_ENLIL_CONE_PSP_timeline.gif
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_ENLIL_CONE_Bepi_timeline.gif
+https://iswa.gsfc.nasa.gov/api/redirect?filename=20261017_063200_2.0_ENLIL_CONE_Osiris_timeline.gif
+
+
+## Notes: 
+
+
+SCORE CME typification system:
+S-type: CMEs with speeds less than 500 km/s
+C-type: Common 500-999 km/s
+O-type: Occasional 1000-1999 km/s
+R-type: Rare 2000-2999 km/s
+ER-type: Extremely Rare >3000 km/s
+
+
+Community Coordinated Modeling Center Database Of Notifications, Knowledge, Information (CCMC DONKI) Disclaimer
+
+Data and/or information stored within the CCMC DONKI is provided ""as is"" without any warranty of any kind, either expressed, implied, or statutory, including, but not limited to, any warranty that the data and/or information will conform to specifications, any implied warranties of merchantability, fitness for a particular purpose, or freedom from infringement, any warranty that the information will be error free, or any warranty that documentation, if provided, will conform to the data and/or information. In no event shall the United States Government, or its contractors or subcontractors, be liable for any damages, including, but not limited to, direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with this information, whether or not based upon warranty, contract, tort, or otherwise, whether or not injury was sustained by persons or property or otherwise, and whether or not loss was sustained from, or arose out of the results of, or use of, the data and/or information. The United States Government disclaims all warranties and liabilities regarding third party data and/or information, if present in the data and/or information generated and/or compiled by CCMC DONKI, and distributes it ""as is"".
+
+Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute an endorsement by NASA of any test results, resulting designs, hardware, or other matters. Use of data and/or information stored within the CCMC DONKI does not, in any manner, constitute the grant of a license to RECIPIENT under any NASA copyright, patent, patent application or other intellectual property.
+
+The terms of this disclaimer shall be construed, and the legal relations between the parties hereto shall be determined, in accordance with United States federal law.
+
+NOAA's Space Weather Prediction Center is the United States Government official source for space weather forecasts. This ""Experimental Research Information"" consists of preliminary NASA research products and should be interpreted and used accordingly."
