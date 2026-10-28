@@ -95,3 +95,5 @@ wikipedia.txt
 notes.txt
 auto-py-to-exe.json
 wiki_search_info.py
+.idea
+__pycache__
